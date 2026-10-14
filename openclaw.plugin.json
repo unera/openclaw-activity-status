@@ -1,0 +1,20 @@
+{
+  "id": "openclaw-activity-status",
+  "name": "OpenClaw Activity Status",
+  "description": "Shows elapsed time and safe model/tool activity counters while an agent turn is running.",
+  "categories": ["productivity"],
+  "activation": {
+    "onStartup": true
+  },
+  "configSchema": {
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+      "enabled": { "type": "boolean", "default": true },
+      "locale": { "type": "string", "enum": ["auto", "ru", "en"], "default": "auto" },
+      "intervalSeconds": { "type": "number", "minimum": 6, "maximum": 60, "default": 8 },
+      "showFinal": { "type": "boolean", "default": true },
+      "templates": { "type": "object", "additionalProperties": { "type": "string" } }
+    }
+  }
+}
